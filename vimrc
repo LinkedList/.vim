@@ -5,13 +5,13 @@ set hlsearch
 set nowrap
 filetype plugin indent on
 colorscheme monokai
-
+let mapleader = "\<Space>"
 " remove trailing whitespace on save php, js
 autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 " save on ctrl-s
-nnoremap <c-s> <Esc>:update<CR>
-inoremap <c-s> <Esc>:update<CR>
+nnoremap <Leader>w <Esc>:update<CR>
+inoremap <Leader>w <Esc>:update<CR>
 
 " switching between views
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -52,8 +52,8 @@ let tlist_php_settings = 'php;c:class;f:function'
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --extra=+q .<CR>
 
-map <c-r> :CtrlPBufTag<CR>
-let g:ctrlp_map = '<c-t>'
+map <Leader>r :CtrlPBufTag<CR>
+let g:ctrlp_map = '<Leader>t' 
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
