@@ -36,7 +36,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 highlight Pmenu ctermbg=8 guibg=#606060
 highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
@@ -70,9 +70,10 @@ let g:taboo_tab_format='[%1a]%m'
 set shiftwidth=4
 set tabstop=4
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 let g:syntastic_quiet_messages = { "type": "style" }
+let g:airline_powerline_fonts = 1
