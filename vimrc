@@ -78,3 +78,7 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:airline_powerline_fonts = 1
+
+imap <CR>     <Plug>(neosnippet_expand_or_jump)
+smap <CR>     <Plug>(neosnippet_expand_or_jump)
+xmap <CR>     <Plug>(neosnippet_expand_target)
