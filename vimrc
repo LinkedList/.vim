@@ -14,11 +14,6 @@ autocmd BufWritePre *.js :%s/\s\+$//e
 " save on ctrl-s
 nnoremap <Leader>w <Esc>:update<CR>
 
-imap <ESC>oA <ESC>ki
-imap <ESC>oB <ESC>ji
-imap <ESC>oC <ESC>li
-imap <ESC>oD <ESC>hi
-
 " switching between views
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -31,6 +26,9 @@ let g:neocomplete#enable_insert_char_pre            = 1
 let g:neocomplete#enable_smart_case                 = 1
 let g:neocomplete#enable_auto_select                = 1
 let g:neocomplete#enable_refresh_always             = 1
+
+let g:UltiSnipsExpandTrigger ="<CR>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -50,7 +48,7 @@ map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --extra=+q .<CR>
 
 map <Leader>r :CtrlPBufTag<CR>
-let g:ctrlp_map = '<Leader>t' 
+map <Leader>t :CtrlP<CR>
 let g:ctrlp_switch_buffer = 'Et'
 set wildignore+=**/doxygen/*,**/store/*,**/system/*,**/temp/*,**/tests/*,**/shared/*,**/client/jquery/*,**/client/ckeditor/*,**/client/images/*,**/dbupdate/*
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
