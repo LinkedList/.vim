@@ -44,6 +44,7 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 35
 let Tlist_Use_Right_Window = 1
 let tlist_php_settings = 'php;c:class;f:function'
+let Tlist_Show_One_File = 1
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --extra=+q .<CR>
 
