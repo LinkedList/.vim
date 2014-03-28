@@ -5,6 +5,7 @@ syntax on
 set number
 set hlsearch
 set nowrap
+set directory=$HOME/.vim-temp/swapfiles//
 filetype plugin indent on
 colorscheme monokai
 let mapleader = "\<Space>"
@@ -27,7 +28,7 @@ let g:neocomplete#enable_smart_case                 = 1
 let g:neocomplete#enable_auto_select                = 1
 let g:neocomplete#enable_refresh_always             = 1
 
-let g:UltiSnipsExpandTrigger ="<CR>"
+let g:UltiSnipsExpandTrigger ="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
