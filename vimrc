@@ -17,6 +17,9 @@ autocmd BufWritePre *.lua :%s/\s\+$//e
 " save on ctrl-s
 nnoremap <Leader>w <Esc>:update<CR>
 
+" delimitmate CR
+let delimitMate_expand_cr = 1
+
 " switching between views
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
