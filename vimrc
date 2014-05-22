@@ -1,14 +1,19 @@
 set nocompatible
 set nocp
+
 execute pathogen#infect()
 syntax on
 set number
 set hlsearch
 set nowrap
 set autowrite
+
 set directory=$HOME/.vim-temp/swapfiles//
+
 filetype plugin indent on
+
 colorscheme monokai
+
 let mapleader = "\<Space>"
 " remove trailing whitespace on save php, js
 autocmd BufWritePre *.php :%s/\s\+$//e
@@ -28,10 +33,18 @@ nmap <silent> <A-Right> :wincmd l<CR>
 
 let g:neocomplete#enable_at_startup                 = 1
 let g:neocomplete#enable_auto_delimiter             = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#enable_insert_char_pre            = 1
 let g:neocomplete#enable_smart_case                 = 1
-let g:neocomplete#enable_auto_select                = 1
 let g:neocomplete#enable_refresh_always             = 1
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" :
+  \<SID>check_back_space() ? ":\<TAB>" :
+  \neocomplete#start_manual_complete()
+function! s:check_back_space()
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
 
 let g:UltiSnipsExpandTrigger ="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -41,6 +54,9 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd Filetype php setlocal omnifunc=phpcomplete#CompletePHP
+
+autocmd BufNewFile, BufRead *.php set filetype=php.html
 
 highlight Pmenu ctermbg=8 guibg=#606060
 highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
@@ -106,3 +122,7 @@ function! DoPrettyXML()
   exe "set ft=" . l:origft
 endfunction
 command! PrettyXML call DoPrettyXML()
+
+"tab and EOL characters
+set listchars=tab:▸\ ,eol:¬
+nmap <Leader>l :set list!<CR>
