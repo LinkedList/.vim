@@ -18,6 +18,7 @@ let mapleader = "\<Space>"
 " remove trailing whitespace on save php, js
 autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.c :%s/\s\+$//e
 autocmd BufWritePre *.lua :%s/\s\+$//e
 " save on ctrl-s
 nnoremap <Leader>w <Esc>:update<CR>
