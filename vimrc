@@ -14,6 +14,10 @@ filetype plugin indent on
 
 colorscheme monokai
 
+"Shift enter and enter in normal mode insert line
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
 let mapleader = "\<Space>"
 " remove trailing whitespace on save php, js
 autocmd BufWritePre *.php :%s/\s\+$//e
